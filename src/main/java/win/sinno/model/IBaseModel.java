@@ -30,17 +30,13 @@ import java.util.Date;
  * @version : 1.0
  * @since : 2017/4/28 13:29
  */
-public interface IBaseModel extends Serializable {
+public interface IBaseModel extends IModel, Serializable {
 
-    Long getId();
+    Date getGmtCreate();
 
-    void setId(Long id);
+    void setGmtCreate(Date gmtCreate);
 
-    Date getAddTs();
+    Date getGmtModified();
 
-    void setAddTs(Date addTs);
-
-    Date getUpdateTs();
-
-    void setUpdateTs(Date updateTs);
+    void setGmtModified(Date gmtModified);
 }

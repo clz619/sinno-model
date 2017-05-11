@@ -6,10 +6,12 @@
 
     <groupId>win.sinno</groupId>
     <artifactId>sinno-model</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
     <description>
         basic model api. no other deps
+        1.0.0:add IBaseModel
+        1.0.1:add IModel,IDao
     </description>
 
     <packaging>jar</packaging>
