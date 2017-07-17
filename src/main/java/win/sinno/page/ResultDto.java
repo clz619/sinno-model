@@ -1,5 +1,7 @@
 package win.sinno.page;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import win.sinno.constant.ResultCode;
 
 import java.io.Serializable;
@@ -11,6 +13,8 @@ import java.io.Serializable;
  * @version : 1.0
  * @since : 2016-12-16 11:21.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class ResultDto implements Serializable {
 
     /**

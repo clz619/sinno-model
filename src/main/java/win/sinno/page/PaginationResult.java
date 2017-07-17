@@ -1,5 +1,7 @@
 package win.sinno.page;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,6 +12,7 @@ import java.util.List;
  * @version : 1.0
  * @since : 2016-08-25 14:45.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PaginationResult<R> implements Serializable {
 
     /**
@@ -60,10 +63,6 @@ public class PaginationResult<R> implements Serializable {
 
     public Integer getPageSize() {
         return pageSize;
-    }
-
-    public Long getBeginLong() {
-        return 1L * (this.curPage - 1) * this.pageSize;
     }
 
     public Integer getBegin() {

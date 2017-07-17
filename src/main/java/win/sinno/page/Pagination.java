@@ -1,5 +1,9 @@
 package win.sinno.page;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -10,6 +14,8 @@ import java.util.List;
  * @version : 1.0
  * @since : 2016-08-25 14:49.
  */
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Pagination<P extends SearchParam, R> implements Serializable {
 
     /**
@@ -20,8 +26,8 @@ public class Pagination<P extends SearchParam, R> implements Serializable {
     /**
      * 分页结果
      */
+    @JsonIgnore
     private PaginationResult paginationResult;
-
 
     /**
      * 设置页数
@@ -52,10 +58,6 @@ public class Pagination<P extends SearchParam, R> implements Serializable {
 
     public Integer getBegin() {
         return paginationResult.getBegin();
-    }
-
-    public Long getBeginLong() {
-        return paginationResult.getBeginLong();
     }
 
     public Integer getPageCount() {
