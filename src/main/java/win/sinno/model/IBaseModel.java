@@ -32,9 +32,9 @@ import java.util.Date;
  */
 public interface IBaseModel extends IModel, Serializable {
 
-    Date getGmtCreate();
+    Date getGmtCreated();
 
-    void setGmtCreate(Date gmtCreate);
+    void setGmtCreated(Date gmtCreated);
 
     Date getGmtModified();
 
