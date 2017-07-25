@@ -71,4 +71,12 @@ public class ResultDto implements Serializable {
         this.ret = ret;
         return this;
     }
+
+    public static ResultDto newSuccess(Object ret) {
+        return new ResultDto(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), ret);
+    }
+
+    public static ResultDto newFail() {
+        return new ResultDto(ResultCode.FAIL.getCode(), ResultCode.FAIL.getMsg());
+    }
 }

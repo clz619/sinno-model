@@ -14,9 +14,9 @@ public enum ResultCode {
     SUCCESS(200, "success"),
 
     /**
-     * 400.fail
+     * 500.fail
      */
-    FAIL(400, "fail"),
+    FAIL(500, "fail"),
 
     /**
      * 571.param-missing
