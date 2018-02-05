@@ -1,11 +1,11 @@
-package win.sinno.page;
+package win.sinno.resp;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.io.Serializable;
 
 /**
- * win.sinno.page.RespStatus
+ * win.sinno.resp.RespStatus
  *
  * @author : admin@chenlizhong.cn
  * @date 2018/2/5

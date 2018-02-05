@@ -1,7 +1,8 @@
-package win.sinno.page;
+package win.sinno.resp.page;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.util.List;
+import win.sinno.resp.RespStatus;
 
 /**
  * 分页结果集
