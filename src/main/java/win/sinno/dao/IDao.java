@@ -1,8 +1,8 @@
 package win.sinno.dao;
 
-import win.sinno.model.IModel;
-
 import java.util.List;
+import java.util.Map;
+import win.sinno.model.IModel;
 
 /**
  * dao interface
@@ -13,17 +13,19 @@ import java.util.List;
  */
 public interface IDao<T extends IModel> {
 
-    Long countAll();
+  Long countAll();
 
-    T selectById(Long id);
+  T selectById(Long id);
 
-    Long insert(T t);
+  List<T> selectAll(Map<String, Object> params);
 
-    Long insertBatch(List<T> list);
+  Long insert(T t);
 
-    Long updateById(T t);
+  Long insertBatch(List<T> list);
 
-    Long updateBatch(List<T> list);
+  Long updateById(T t);
 
-    Long deleteById(Long id);
+  Long updateBatch(List<T> list);
+
+  Long deleteById(Long id);
 }
