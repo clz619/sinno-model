@@ -1,4 +1,4 @@
-package win.sinno.resp.page;
+package win.sinno.web.resp.page;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
