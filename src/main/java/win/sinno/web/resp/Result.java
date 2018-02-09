@@ -13,7 +13,7 @@ import win.sinno.constant.ResultCode;
  */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Result extends RespStatus {
+public class Result<R> extends RespStatus {
 
   /**
    * success.成功
@@ -28,31 +28,53 @@ public class Result extends RespStatus {
       ResultCode.FAIL.getMsg());
 
   //obj
-  private Object ret;
+  private R ret;
 
   public Result(Integer code, String msg) {
     super(code, msg);
   }
 
-  public Result(Integer code, String msg, Object ret) {
+  public Result(Integer code, String msg, R ret) {
     super(code, msg);
     this.ret = ret;
   }
 
+  public boolean isSuccess() {
+    return ResultCode.SUCCESS.getCode() == getCode();
+  }
 
-  public Object getRet() {
+  public R getRet() {
     return ret;
   }
 
-  public void setRet(Object ret) {
+  public void setRet(R ret) {
     this.ret = ret;
   }
 
-  public static Result newSuccess(Object ret) {
+  public static <R> Result newSuccess(R ret) {
     return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), ret);
   }
 
   public static Result newFail() {
     return new Result(ResultCode.FAIL.getCode(), ResultCode.FAIL.getMsg());
+  }
+
+  public static Result newFail(String msg) {
+    return new Result(ResultCode.FAIL.getCode(), msg);
+  }
+
+  public static Result newFail(Integer code, String msg) {
+    return new Result(code, msg);
+  }
+
+  public static Result newFail(ResultCode code, String msg) {
+    return new Result(code.getCode(), msg + code.getDescr());
+  }
+
+  @Override
+  public String toString() {
+    return "Result{" +
+        "ret=" + ret +
+        "} " + super.toString();
   }
 }

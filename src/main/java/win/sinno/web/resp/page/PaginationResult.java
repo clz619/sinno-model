@@ -36,23 +36,23 @@ public class PaginationResult<R> extends RespStatus {
 
   public PaginationResult(Integer code, String msg) {
     super(code, msg);
-    init();
+    format();
   }
 
   public PaginationResult(Integer curPage, Integer pageSize) {
     this.curPage = curPage;
     this.pageSize = pageSize;
-    init();
+    format();
   }
 
   public PaginationResult(Integer code, String msg, Integer curPage, Integer pageSize) {
     super(code, msg);
     this.curPage = curPage;
     this.pageSize = pageSize;
-    init();
+    format();
   }
 
-  private void init() {
+  private void format() {
     if ((this.curPage == null) || (this.curPage <= 0)) {
       this.curPage = 1;
     }
@@ -76,7 +76,7 @@ public class PaginationResult<R> extends RespStatus {
     return pageSize;
   }
 
-  public Integer getBegin() {
+  public Integer getOffset() {
     return (this.curPage - 1) * this.pageSize;
   }
 

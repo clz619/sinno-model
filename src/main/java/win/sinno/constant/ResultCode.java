@@ -8,48 +8,55 @@ package win.sinno.constant;
  * @since : 2016-12-16 11:34.
  */
 public enum ResultCode {
-    /**
-     * 200.success
-     */
-    SUCCESS(200, "success"),
+  /**
+   * 200.success
+   */
+  SUCCESS(200, "success", "成功"),
 
-    /**
-     * 500.fail
-     */
-    FAIL(500, "fail"),
+  /**
+   * 500.fail
+   */
+  FAIL(500, "fail", "失败"),
 
-    /**
-     * 571.param-missing
-     */
-    PARAM_MISSING(571, "param-missing"),
+  /**
+   * 571.param-missing
+   */
+  PARAM_MISSING(571, "param-missing", "参数缺失"),
 
-    /**
-     * 572.param-invalid
-     */
-    PARAM_INVALID(572, "param-invalid"),;
+  /**
+   * 572.param-invalid
+   */
+  PARAM_INVALID(572, "param-invalid", "参数非法"),
 
-    ResultCode(Integer code, String msg) {
-        this.code = code;
-        this.msg = msg;
-    }
+  /**
+   * 573.data-exist
+   */
+  DATA_EXIST(573, "data-exist", "数据已存在"),
+  //
+  ;
 
-    private Integer code;
+  ResultCode(Integer code, String msg, String descr) {
+    this.code = code;
+    this.msg = msg;
+    this.descr = descr;
+  }
 
-    private String msg;
+  private Integer code;
 
-    public Integer getCode() {
-        return code;
-    }
+  private String msg;
 
-    public void setCode(Integer code) {
-        this.code = code;
-    }
+  private String descr;
 
-    public String getMsg() {
-        return msg;
-    }
+  public Integer getCode() {
+    return code;
+  }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
+
+  public String getMsg() {
+    return msg;
+  }
+
+  public String getDescr() {
+    return descr;
+  }
 }

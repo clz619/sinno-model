@@ -2,8 +2,8 @@ package win.sinno.web.resp.page;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
-
 import java.io.Serializable;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,18 +18,37 @@ import java.util.Map;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class SearchParam implements Serializable {
 
-    private Map<String, Object> params = new HashMap<String, Object>();
+  private Map<String, Object> params = new HashMap<String, Object>(8);
 
-    public void put(String key, Object val) {
-        params.put(key, val);
-    }
+  protected SearchParam() {
+  }
 
-    public Object get(String key) {
-        return params.get(key);
-    }
+  public static SearchParam newInstance() {
+    return new SearchParam();
+  }
 
-    public void remove(String key) {
-        params.remove(key);
-    }
+  public SearchParam add(String key, Object val) {
+    params.put(key, val);
+    return this;
+  }
 
+  public Object get(String key) {
+    return params.get(key);
+  }
+
+  public SearchParam remove(String key) {
+    params.remove(key);
+    return this;
+  }
+
+  public Map<String, Object> getParams() {
+    return Collections.unmodifiableMap(params);
+  }
+
+  @Override
+  public String toString() {
+    return "SearchParam{" +
+        "params=" + params +
+        '}';
+  }
 }

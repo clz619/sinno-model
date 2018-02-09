@@ -13,7 +13,7 @@ import win.sinno.model.IModel;
  */
 public interface IDao<T extends IModel> {
 
-  Long countAll();
+  Long countAll(Map<String, Object> params);
 
   T selectById(Long id);
 
