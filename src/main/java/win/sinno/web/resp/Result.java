@@ -68,7 +68,7 @@ public class Result<R> extends RespStatus {
   }
 
   public static Result newFail(ResultCode code, String msg) {
-    return new Result(code.getCode(), msg + code.getDescr());
+    return new Result(code.getCode(), code.getDescr() + msg);
   }
 
   @Override
