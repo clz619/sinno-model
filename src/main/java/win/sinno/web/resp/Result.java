@@ -51,6 +51,10 @@ public class Result<R> extends RespStatus {
     this.ret = ret;
   }
 
+  public static <R> Result newSuccess() {
+    return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg());
+  }
+
   public static <R> Result newSuccess(R ret) {
     return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), ret);
   }
@@ -65,6 +69,10 @@ public class Result<R> extends RespStatus {
 
   public static Result newFail(Integer code, String msg) {
     return new Result(code, msg);
+  }
+
+  public static Result newFail(ResultCode code) {
+    return new Result(code.getCode(), code.getDescr());
   }
 
   public static Result newFail(ResultCode code, String msg) {
