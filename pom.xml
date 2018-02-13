@@ -29,6 +29,7 @@
 
     <!--plugin-->
     <version.plugin.maven.compiler>3.5.1</version.plugin.maven.compiler>
+    <version.plugin.maven.source>3.0.1</version.plugin.maven.source>
 
   </properties>
 
@@ -52,7 +53,32 @@
           <target>${version.java}</target>
         </configuration>
       </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${version.plugin.maven.source}</version>
+        <configuration>
+          <attach>true</attach>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>compile</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
+
+  <distributionManagement>
+    <repository>
+      <id>sinno</id>
+      <name>sinno-release</name>
+      <url>http://www.sinno.win:28081/repository/sinno/</url>
+    </repository>
+  </distributionManagement>
 
 </project>
