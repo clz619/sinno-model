@@ -4,6 +4,12 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
+  <parent>
+    <groupId>win.sinno</groupId>
+    <artifactId>sinno-parent</artifactId>
+    <version>1.0.0</version>
+  </parent>
+
   <groupId>win.sinno</groupId>
   <artifactId>sinno-model</artifactId>
   <version>1.0.3</version>
@@ -41,44 +47,5 @@
       <scope>provided</scope>
     </dependency>
   </dependencies>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>${version.plugin.maven.compiler}</version>
-        <configuration>
-          <source>${version.java}</source>
-          <target>${version.java}</target>
-        </configuration>
-      </plugin>
-
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <version>${version.plugin.maven.source}</version>
-        <configuration>
-          <attach>true</attach>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>compile</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
-  <distributionManagement>
-    <repository>
-      <id>sinno</id>
-      <name>sinno-release</name>
-      <url>http://www.sinno.win:28081/repository/sinno/</url>
-    </repository>
-  </distributionManagement>
 
 </project>
