@@ -12,7 +12,7 @@
 
   <groupId>win.sinno</groupId>
   <artifactId>sinno-model</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4</version>
 
   <description>
     basic model api. no other deps
@@ -20,6 +20,7 @@
     1.0.1:add IModel,IDao
     1.0.2:mod gmtCreate -> gmtCreated
     1.0.3:mod web params
+    1.0.4:mod Result return param
   </description>
 
   <packaging>jar</packaging>

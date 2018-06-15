@@ -51,32 +51,32 @@ public class Result<R> extends RespStatus {
     this.ret = ret;
   }
 
-  public static <R> Result newSuccess() {
-    return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg());
+  public static <R> Result<R> newSuccess() {
+    return new Result<R>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg());
   }
 
-  public static <R> Result newSuccess(R ret) {
-    return new Result(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), ret);
+  public static <R> Result<R> newSuccess(R ret) {
+    return new Result<R>(ResultCode.SUCCESS.getCode(), ResultCode.SUCCESS.getMsg(), ret);
   }
 
-  public static Result newFail() {
-    return new Result(ResultCode.FAIL.getCode(), ResultCode.FAIL.getMsg());
+  public static <R> Result<R> newFail() {
+    return new Result<R>(ResultCode.FAIL.getCode(), ResultCode.FAIL.getMsg());
   }
 
-  public static Result newFail(String msg) {
-    return new Result(ResultCode.FAIL.getCode(), msg);
+  public static <R> Result<R> newFail(String msg) {
+    return new Result<R>(ResultCode.FAIL.getCode(), msg);
   }
 
-  public static Result newFail(Integer code, String msg) {
-    return new Result(code, msg);
+  public static <R> Result<R> newFail(Integer code, String msg) {
+    return new Result<R>(code, msg);
   }
 
-  public static Result newFail(ResultCode code) {
-    return new Result(code.getCode(), code.getDescr());
+  public static <R> Result<R> newFail(ResultCode code) {
+    return new Result<R>(code.getCode(), code.getDescr());
   }
 
-  public static Result newFail(ResultCode code, String msg) {
-    return new Result(code.getCode(), code.getDescr() + msg);
+  public static <R> Result<R> newFail(ResultCode code, String msg) {
+    return new Result<R>(code.getCode(), code.getDescr() + msg);
   }
 
   @Override
